@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Experience | Anusha Apparaju</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:      #0a1628;
+    --deep-blue: #112240;
+    --mid-blue:  #1a3a6b;
+    --gold:      #c9a84c;
+    --gold-light:#e8c97a;
+    --gold-pale: #f5e6c0;
+    --white:     #ffffff;
+    --text-light:#ccd6f6;
+    --text-muted:#8892b0;
+    --border:    rgba(201,168,76,0.25);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Source Sans 3',sans-serif;
+    background:var(--navy); color:var(--text-light);
+    overflow-x:hidden;
+  }
+
+  /* NAV */
+  nav {
+    position:fixed; top:0; width:100%; z-index:999;
+    background:rgba(10,22,40,0.95);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+    padding:0 5%;
+    display:flex; align-items:center; justify-content:space-between;
+    height:68px;
+  }
+  .nav-logo {
+    font-family:'Playfair Display',serif;
+    font-size:1.25rem; font-weight:700;
+    color:var(--gold); text-decoration:none;
+    letter-spacing:0.04em;
+  }
+  .nav-links { display:flex; gap:0.2rem; list-style:none; }
+  .nav-links a {
+    color:var(--text-muted); font-size:0.82rem;
+    font-weight:500; letter-spacing:0.07em;
+    text-transform:uppercase; text-decoration:none;
+    padding:8px 12px; border-radius:4px;
+    transition:all 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color:var(--gold);
+    background:rgba(201,168,76,0.08);
+  }
+  .hamburger {
+    display:none; flex-direction:column;
+    gap:5px; cursor:pointer; padding:4px;
+  }
+  .hamburger span { display:block; width:24px; height:2px; background:var(--gold); transition:all 0.3s; }
+
+  /* PAGE HEADER (all inner pages) */
+  .page-hero {
+    min-height:38vh;
+    display:flex; align-items:flex-end;
+    padding:100px 8% 50px;
+    background:
+      radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 10% 80%, rgba(26,58,107,0.5) 0%, transparent 55%),
+      var(--navy);
+    position:relative; overflow:hidden;
+  }
+  .page-hero::before {
+    content:'';
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+    background-size:60px 60px;
+  }
+  .page-hero-inner { position:relative; z-index:1; }
+  .page-tag {
+    display:inline-block; color:var(--gold);
+    font-size:0.75rem; font-weight:700;
+    letter-spacing:0.22em; text-transform:uppercase;
+    margin-bottom:0.5rem;
+  }
+  .page-title {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2rem,4vw,3rem);
+    font-weight:900; color:var(--white);
+    line-height:1.15;
+  }
+  .page-line {
+    width:60px; height:3px;
+    background:linear-gradient(90deg,var(--gold),transparent);
+    margin-top:14px;
+  }
+
+  /* SECTION */
+  .page-content { padding:70px 8% 90px; max-width:1100px; margin:0 auto; }
+
+  /* FOOTER */
+  footer {
+    background:var(--deep-blue);
+    border-top:1px solid var(--border);
+    text-align:center; padding:1.8rem 8%;
+    color:var(--text-muted); font-size:0.82rem;
+  }
+  footer span { color:var(--gold); }
+
+  /* REVEAL */
+  .reveal {
+    opacity:0; transform:translateY(24px);
+    transition:opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* MOBILE */
+  @media(max-width:900px) {
+    .nav-links { display:none; }
+    .hamburger { display:flex; }
+    .nav-links.open {
+      display:flex; flex-direction:column;
+      position:fixed; top:68px; left:0; right:0;
+      background:var(--deep-blue); padding:1.5rem 5%;
+      gap:0.4rem; border-bottom:1px solid var(--border);
+    }
+    .nav-links.open a { padding:10px 14px; }
+    .page-content { padding:50px 6% 70px; }
+  }
+</style>
+
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">A. Apparaju</a>
+  <ul class="nav-links" id="navLinks"><li><a href="index.html" >Home</a></li>
+<li><a href="skills.html" >Skills</a></li>
+<li><a href="experience.html" class='active'>Experience</a></li>
+<li><a href="education.html" >Education</a></li>
+<li><a href="achievements.html" >Achievements</a></li>
+<li><a href="publications.html" >Publications</a></li>
+<li><a href="blog.html" >Blog</a></li>
+<li><a href="contact.html" >Contact</a></li></ul>
+  <div class="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-tag">03 · Experience</div>
+    <h1 class="page-title">Professional Journey</h1>
+    <div class="page-line"></div>
+  </div>
+</div>
+<div class="page-content">
+  <div style="position:relative;padding-left:2rem;">
+    <div style="position:absolute;left:0;top:8px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),rgba(201,168,76,0.1));"></div>
+
+    <div class="reveal" style="position:relative;margin-bottom:3rem;padding-left:2rem;">
+      <div style="position:absolute;left:-2.6rem;top:6px;width:14px;height:14px;background:var(--gold);border-radius:50%;border:3px solid var(--navy);box-shadow:0 0 0 3px rgba(201,168,76,0.3);"></div>
+      <div style="color:var(--gold);font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.4rem;">January 2024 – Present</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:0.2rem;">Assistant Professor in Computer Science</div>
+      <div style="color:var(--gold-light);font-size:0.9rem;font-weight:500;margin-bottom:0.25rem;">TGSWRDCW Rajanna Sircilla</div>
+      <div style="color:var(--text-muted);font-size:0.8rem;margin-bottom:0.8rem;">📍 Rajanna Sircilla, Telangana</div>
+      <div style="color:var(--text-muted);font-size:0.92rem;line-height:1.78;">Serving as Assistant Professor and CGC Coordinator in the Department of Computer Science. Responsible for academic instruction, student career guidance, and departmental coordination. Active in curriculum planning aligned with NEP 2020 and modern CS pedagogies.</div>
+    </div>
+
+    <div class="reveal" style="position:relative;margin-bottom:3rem;padding-left:2rem;">
+      <div style="position:absolute;left:-2.6rem;top:6px;width:14px;height:14px;background:var(--gold);border-radius:50%;border:3px solid var(--navy);box-shadow:0 0 0 3px rgba(201,168,76,0.3);"></div>
+      <div style="color:var(--gold);font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.4rem;">July 2019 – July 2024</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:0.2rem;">Assistant Professor in CSE</div>
+      <div style="color:var(--gold-light);font-size:0.9rem;font-weight:500;margin-bottom:0.25rem;">JNTUH College of Engineering Jagtial</div>
+      <div style="color:var(--text-muted);font-size:0.8rem;margin-bottom:0.8rem;">📍 Jagtial, Telangana</div>
+      <div style="color:var(--text-muted);font-size:0.92rem;line-height:1.78;">Taught core Computer Science and Engineering subjects across undergraduate programs. Supervised final-year projects involving AI, automation, and data-driven applications. Acted as a resource person for Faculty Development Programmes (FDPs) and Workshops at engineering colleges across Telangana.</div>
+    </div>
+
+    <div class="reveal" style="position:relative;margin-bottom:3rem;padding-left:2rem;">
+      <div style="position:absolute;left:-2.6rem;top:6px;width:14px;height:14px;background:var(--gold);border-radius:50%;border:3px solid var(--navy);box-shadow:0 0 0 3px rgba(201,168,76,0.3);"></div>
+      <div style="color:var(--gold);font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.4rem;">January 2014 – July 2019</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:0.2rem;">Assistant Professor in CSE</div>
+      <div style="color:var(--gold-light);font-size:0.9rem;font-weight:500;margin-bottom:0.25rem;">Vaageswari College of Engineering</div>
+      <div style="color:var(--text-muted);font-size:0.8rem;margin-bottom:0.8rem;">📍 Karimnagar, Telangana</div>
+      <div style="color:var(--text-muted);font-size:0.92rem;line-height:1.78;">Delivered lectures in core CSE subjects, contributed to curriculum development and undergraduate student mentorship. Engaged actively in academic seminars and faculty training initiatives, laying the foundation for a career of excellence in engineering education.</div>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <p>© 2025 <span>Anusha Apparaju</span> · CS Educator &amp; EdTech Specialist · Karimnagar, Telangana</p>
+</footer>
+
+<script>
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    if (a.getAttribute('href') === window.location.pathname.split('/').pop() ||
+       (window.location.pathname.endsWith('/') && a.getAttribute('href') === 'index.html')) {
+      a.classList.add('active');
+    }
+  });
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
